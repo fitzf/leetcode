@@ -14,7 +14,7 @@ class Problem0003 {
          * 2. 设置窗口的左边和右边索引为 0 val l = 0, val r = 0
          * 3. 循环判断窗口中是否包含字符串【s】右边索引下的字符，直到窗口滑动到字符串的末尾
          *   a. 不包含：右边索引右移 r++ 并更新窗口的最大长度 max = max(已存储的最大长度, 当前窗口长度)
-         *   b. 包含：左边索引右移 l++
+         *   b. 包含：左边索引右移 l++ 如果移动后的左边索引到末尾的长度不大于已存在的最大长度的话 跳出循环
          */
         fun slidingWindow(s: String): Int = when {
             s.isEmpty() -> 0
@@ -28,7 +28,7 @@ class Problem0003 {
                 while (l < len && r < len) {
                     if (set.contains(s[r])) {
                         set.remove(s[l++])
-                        if (len - l < max) {
+                        if (len - l <= max) {
                             break
                         }
                     } else {
