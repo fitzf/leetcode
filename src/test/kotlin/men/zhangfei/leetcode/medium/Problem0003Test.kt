@@ -24,11 +24,11 @@ internal class Problem0003Test {
     companion object {
         @JvmStatic
         fun parameterProvider(): Stream<Arguments> = Stream.of(
-                arguments(3, "abcabcbb"),
-                arguments(1, "bbbbb"),
-                arguments(3, "pwwkew"),
-                arguments(2, "abba"),
-                arguments(3, "cbabcb")
+            arguments(3, "abcabcbb"),
+            arguments(1, "bbbbb"),
+            arguments(3, "pwwkew"),
+            arguments(2, "abba"),
+            arguments(3, "cbabcb")
         )
     }
 }
